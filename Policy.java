@@ -47,74 +47,159 @@ public class Policy
       weight = w;
    }
    
+    /**
+   mutator (setter) method
+   @param num the policy number
+   */
+   public void setPolicyNumber(int num)
+   {
+      policyNum = num;
+   }
+
+   
    /**
    accessor (getter) method
-   @return the ppolicy number
+   @return the policy number
    */
-   public void getPolicyNumber()
+   public int getPolicyNumber()
    {
       return policyNum;
    }
    
    /**
+   mutator (setter) method
+   @param num the policy number
+   */
+   public void setProviderName(String name)
+   {
+      providerName = name;
+   }
+
+   
+   /**
    accessor (getter) method
    @return the provider's name
    */
-   public void getProviderName()
+   public String getProviderName()
    {
       return providerName;
    }
    
    /**
+   mutator (setter) method
+   @param num the policy number
+   */
+   public void setFirstName(String fName)
+   {
+      firstName = fName;
+   }
+
+   
+   /**
    accessor (getter) method
    @return the policyholder's first name
    */
-   public void getFirstName()
+   public String getFirstName()
    {
       return firstName;
    }
+   
+   
+   /**
+   mutator (setter) method
+   @param num the policy number
+   */
+   public void setLastName(String lName)
+   {
+      lastName = lName;
+   }
+
    
    /**
    accessor (getter) method
    @return the policyholder's last name
    */
-   public void getLastName()
+   public String getLastName()
    {
       return lastName;
    }
+   
+   
+   /**
+   mutator (setter) method
+   @param num the policy number
+   */
+   public void setAge(int a)
+   {
+      age = a;
+   }
+
    
    /**
    accessor (getter) method
    @return the policy holder's age
    */
-   public void getAge()
+   public int getAge()
    {
       return age;
    }
+   
+   
+   /**
+   mutator (setter) method
+   @param num the policy number
+   */
+   public void setSmokingStatus(String ss)
+   {
+      smokingStatus = ss;
+   }
+
    
    /**
    accessor (getter) method
    @return the policyholder's smoking status
    */
-   public void getSmokingStatus()
+   public String getSmokingStatus()
    {
       return smokingStatus;
    }
+   
+   
+   /**
+   mutator (setter) method
+   @param num the policy number
+   */
+   public void setHeight(double h)
+   {
+      height = h;
+   }
+
    
    /**
    accessor (getter) method
    @return the policyholder's height
    */
-   public void getHeight()
+   public double getHeight()
    {
       return height;
    }
+   
+   
+   /**
+   mutator (setter) method
+   @param num the policy number
+   */
+   public void setWeight(double w)
+   {
+      weight = w;
+   }
+
    
    /**
    accessor (getter) method
    @return the policyholder's weight
    */
-   public void getWeight()
+   public double getWeight()
    {
       return weight;
    }
@@ -125,7 +210,7 @@ public class Policy
    */
    public double getBMI()
    {
-      double BMI = (weight * 703 ) / (height * height );
+      double BMI = (weight * 703.0 ) / (height * height );
       return BMI;
    }
    
@@ -134,18 +219,20 @@ public class Policy
    @return the price of the insurance policy
    */
    
-   public double getInsurancePolicy()
+   public double getInsurancePolicyFee()
    {
       double insurance = 600;
+      double currentBMI;
       
       if(age > 50)
          insurance += 75;
-      if(smokingStatus.equalsIgnoresCase("smoker"))
+      if(smokingStatus.equalsIgnoreCase("smoker"))
          insurance += 100;
-      if(BMI > 35)
-         insurance += ( BMI – 35 ) * 20;
+      currentBMI = getBMI(); 
+      if(currentBMI > 35)
+         insurance += ( currentBMI - 35 ) * 20;
            
-      
+      return insurance;
    }
 
    
