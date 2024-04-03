@@ -19,7 +19,7 @@ public class Project_Kayla_Smith
       System.out.print("Please enter the Policy Number: ");
       policyNum = keyboard.nextInt();
       
-      keyboard.nextLine();
+      keyboard.nextLine();//clear the buffer
       
       System.out.print("\nPlease enter the provider Name: ");
       providerName = keyboard.nextLine();
